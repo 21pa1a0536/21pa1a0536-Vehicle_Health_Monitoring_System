@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: vehicle-health-dashboard
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run vehicle_monitor_streamlit.py --server.port $PORT
+    envVars:
+      - key: PORT
+        value: 10000
